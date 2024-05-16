@@ -1,0 +1,630 @@
+/*  font-family: "Poppins", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* font-family: "Montserrat", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root{
+    --main-bg-color1:#121212;
+    --sec-bg-color2: #212121;
+    --contact-color:#748182;
+    --headers-color:#DEDEDE;
+}
+
+.headers-color{
+    color: var(--headers-color);
+}
+
+.bg-1{
+    background-color: var(--main-bg-color1);
+}
+
+.bg-2{
+    background-color: var(--sec-bg-color2)
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: var(--main-bg-color1);
+    color:var(--contact-color) ;
+}
+
+h1 , h2 , h3 , h4 , h5 , h6 , .navbar-brand{
+    font-family: "Montserrat", sans-serif;
+    color: var(--headers-color)
+}
+
+/*----------------startup-animation--------------*/
+
+header{
+    position: relative;
+    overflow: hidden;
+}
+
+body .start-up {
+    background-color: #282929;
+    height: 150vh;
+    width: 100%;
+    position: absolute;
+    right: -35%;
+    animation-name: a1;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    /* animation-iteration-count: infinite; */
+    animation-fill-mode: both;
+    z-index: 10000;
+    transform: rotate(90deg);
+}
+
+@keyframes a1 {
+    from {
+        right: -35%;
+    }
+    to {
+        right: -500%;
+    }
+}
+
+.start-up  svg,
+.start-up2 svg {
+    fill: #282929;
+    display: block;
+    position: absolute;
+    top: 100%;
+}
+
+
+body .start-up2 {
+    background-color: #282929;
+    height: 150vh;
+    width: 100%;
+    position: absolute;
+    left: -35%;
+    top: -285px;
+    animation-name: a2;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    /* animation-iteration-count: infinite; */
+    animation-fill-mode: both;
+    z-index: 10000;
+    transform: rotate(-90deg);
+}
+
+@keyframes a2 {
+    from {
+        left: -35%;
+    }
+    to {
+        left: -500%;
+    }
+}
+
+/*------------------- navbar ------------*/
+
+/*------------------ hamburger icon ------------------------
+--------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+---------------------------------------------------------------------------*/
+
+/* Remove border from toggler */
+.navbar-toggler {
+    border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color:white;
+    display: block;
+    transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar{
+    margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: white;
+}
+
+/*--------------------- navbar color changer-------------------
+----------------------------------------------------
+----------------------------------------------------------------
+----------------------------------------------------------------*/
+
+.navbar{
+    transition: all 0.4s;
+}
+
+.navbar-scroll{
+    background-color: black;
+}
+
+/*------------------------------navbar----------------------------------------
+----------------------------------------------------------------------*/
+
+/* nav{
+    background-color: rgba(0, 0, 0, 0.162);
+    transition: 0.4s;
+}
+
+nav:hover{
+    background-color: black;
+} */
+
+nav .navbar-toggler:active,
+nav .navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.navbar-brand{
+    letter-spacing: 1.3px;
+}
+
+nav .container  ul li .main-link{
+    position: relative;
+    font-size: 14px;
+}
+
+nav .container  ul li .main-link::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 0;
+    height: 2px;
+    background-color:white;
+    transition: 0.4s;
+    border: none;
+}
+
+nav .container ul li .main-link:hover::after,
+nav .container ul li .main-link.active::after{
+    width: 85%;
+}
+
+/* ---------------------- home section ------------------*/
+
+.home-section{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.649) , rgba(0, 0, 0, 0.649)),url(../media/imgs/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 140px;
+}
+
+.home-section .main-content h1{
+    width: fit-content;
+
+}
+
+.home-section .main-content h1::after{
+    content:"|";
+    animation-name: typing;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    font-weight: 500;
+}
+/*Larry Daniels*/
+
+@keyframes typing{
+    0% {content:"|";}
+    1% {content:"L|";}
+    2% {content:"La|";}
+    4% {content:"Lar|";}
+    5% {content:"Larr|";}
+    6% {content:"Larry|";}
+    7% {content:"Larry |";}
+    8% {content:"Larry D|";}
+    9% {content:"Larry Da|";}
+    10% {content:"Larry Dan|";}
+    11% {content:"Larry Dani|";}
+    12% {content:"Larry Danie|";}
+    13% {content:"Larry Daniel|";}
+    14% {content:"Larry Daniels|";}
+    15% {content:"Larry Daniel|";}
+    16% {content:"Larry Danie|";}
+    17% {content:"Larry Dani|";}
+    18% {content:"Larry Dan|";}
+    19% {content:"Larry Da|";}
+    20% {content:"Larry D|";}
+    21% {content:"Larry |";}
+    22% {content:"Larr|";}
+    23% {content:"Lar|";}
+    24% {content:"La|";}
+    25% {content:"L|";}
+    26% {content:"F|";}
+    27% {content:"Fr|";}
+    28% {content:"Fre|";}
+    29% {content:"Free|";}
+    30% {content:"Freel|";}
+    31% {content:"Freela|";}
+    32% {content:"Freelan|";}
+    33% {content:"Freelanc|";}
+    34% {content:"Freelance|";}
+    35% {content:"Freelancer|";}
+    36% {content:"Freelance|";}
+    37% {content:"Freelanc|";}
+    38% {content:"Freelan|";}
+    39% {content:"Freela|";}
+    40% {content:"Freel|";}
+    41% {content:"Free|";}
+    42% {content:"Fre|";}
+    43% {content:"Fr|";}
+    44% {content:"F|";}
+    45% {content:"P|";}
+    46% {content:"Ph|";}
+    47% {content:"Pho|";}
+    48% {content:"Phot|";}
+    49% {content:"Photo|";}
+    50% {content:"Photog|";}
+    51% {content:"Photogr|";}
+    52% {content:"Photogra|";}
+    53% {content:"Photograp|";}
+    54% {content:"Photograph|";}
+    55% {content:"Photographe|";}
+    56% {content:"Photographer|";}
+    57% {content:"Photographer.|";}
+    58% {content:"Photographer|";}
+    59% {content:"Photographe|";}
+    60% {content:"Photograph|";}
+    61% {content:"Photograp|";}
+    62% {content:"Photogra|";}
+    64% {content:"Photogr|";}
+    66% {content:"Photog|";}
+    67% {content:"Photo|";}
+    69% {content:"Phot|";}
+    70% {content:"Pho|";}
+    72% {content:"Ph|";}
+    74% {content:"P|";}
+    75% {content:"D|";}
+    77% {content:"De|";}
+    78% {content:"Des|";}
+    80% {content:"Desi|";}
+    81% {content:"Desig|";}
+    83% {content:"Design|";}
+    85% {content:"Designe|";}
+    86% {content:"Designer|";}
+    88% {content:"Designer.|";}
+    89% {content:"Designer|";}
+    91% {content:"Designe|";}
+    92% {content:"Design|";}
+    94% {content:"Desig|";}
+    95% {content:"Desi|";}
+    97% {content:"Des|";}
+    98% {content:"De|";}
+    100% {content:"D|";}
+}
+
+.home-section .main-content ul li a{
+    width: 40px;
+    height: 40px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*------------------------ about-section -------------------*/
+
+.about-sec .container .col-lg-5 .layer::after{
+    content: '';
+    position: absolute;
+    left: 4%;
+    bottom: -5%;
+    width: 80%;
+    height: 80%;
+    background-image: url(../media/imgs/dots.png);
+    background-repeat: repeat;
+    z-index: -1;
+}
+
+.about-sec .container .job{
+    letter-spacing: 2px;
+    color: gray;
+}
+
+.about-sec .container .progress{
+    height: 30px;
+    background-color: var(--sec-bg-color2);
+}
+
+.about-sec .about-links a:first-child{
+    background-color: white;
+    color: black;
+    transition: 0.4s;
+}
+
+.about-sec .about-links a:first-child:hover{
+    background-color: #212529;
+    color: white;
+}
+
+.about-sec .about-links a:last-child{
+    transition: 0.4s;
+}
+
+.about-sec .about-links a:last-child:hover{
+    background-color: white;
+    color: black;
+}
+
+/*-------------------------- services-section -----------------*/
+
+.title h3{
+    font-weight: 900;
+    width: fit-content;
+}
+
+.title h3::after{
+    content: "";
+    width: 100%;
+    height: 30px;
+    background-image: url(../media/imgs/dots.png);
+    background-repeat: repeat;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.services-sec .icon-border{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--sec-bg-color2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+.services-sec .icon-border svg{
+    color: var(--headers-color);
+    transition: 0.4s;
+}
+
+.services-sec .services-box:hover .icon-border{
+    background-color: white;
+}
+
+.services-sec .services-box:hover .icon-border svg{
+    color: var(--sec-bg-color2);
+}
+
+/*----------------------- portfolio-section ------------*/
+
+.nav-tabs .nav-link::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    width: 0;
+    height: 2px;
+    background-color:white;
+    transition: 0.4s;
+}
+
+.nav-tabs .nav-link:hover{
+    border: none;
+}
+
+.nav-tabs .nav-link.active::after{
+    width: 95%;
+}
+
+.nav-tabs .nav-link.active{
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+/*------*/
+
+.portfolio-sec .portfolio-box .layer:hover .hover,
+.portfolio-sec .portfolio-box .layer:hover .hover h6{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-sec .hover{
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.860);
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 0.4s;
+} 
+
+.portfolio-sec .hover h6{
+    transform: translateY(-20px);
+    transition: 0.5s;
+}
+
+.portfolio-sec .hover .hover-links a{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.578);
+    transition: 0.4s;
+}
+
+.portfolio-sec .hover .hover-links a:hover{
+    background-color: transparent;
+}
+
+.portfolio-sec .hover .hover-links a svg{
+    font-size: 14px;
+}
+
+.tab-pane.active {
+    animation: slide-down 1s ease-out;
+}
+
+@keyframes slide-down {
+    0% { opacity: 0; transform: scale(0) translateX(100%); }
+    100% { opacity: 1; transform: scale(1) translateX(0); }
+}
+
+/*------------------- testimonial-section------------------------*/
+
+.testimonial-sec .container .person-img{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.carousel-indicators [data-bs-target]{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.carousel-indicators button:hover{
+    background-color: white;
+    opacity: 1;
+}
+
+/*---------------- team-section----------*/
+
+.team-sec .member-box:hover .member-img .social{
+    opacity: 1;
+    transform: rotateY(0deg) scale(1, 1);
+}
+
+.team-sec .member-box .member-img img{
+    transition: 0.5s;
+}
+
+.team-sec .member-box:hover img{
+    scale: 1.2;
+}
+
+.team-sec .member-box .member-img .social{
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background-color: rgba(0, 0, 0, 0.856);
+    opacity: 0;
+    transition: 0.5s;
+    transform: rotateY(180deg) scale(0.5, 0.5);
+}
+
+.team-sec .member-box .member-img .social ul li{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.team-sec .member-box .member-img .social ul li:hover{
+    background-color: white;
+}
+
+.team-sec .member-box .member-img .social ul li:hover a {
+    color: black !important;
+}
+
+.team-sec .member-box .member-img .social ul li a {
+    transition: 0.4s;
+}
+
+
+/* ------------------ contact-section----------------*/
+
+.contact-sec .contact-info:hover .icon{
+    background-color: white;
+}
+
+.contact-sec .contact-info .icon svg{
+    transition: 0.4s;
+}
+
+.contact-sec .contact-info:hover .icon svg{
+    color:var(--sec-bg-color2) !important ;
+}
+
+.contact-sec .icon{
+    width: 60px;
+    height: 60px;
+    background-color: var(--sec-bg-color2);
+    transition: 0.4s;
+}
+
+/* --form editing-----------------------------------
+-------------------------------------------*/
+
+.form-control{
+    border: none;
+    color: white !important;
+}
+
+.form-control:focus{
+    background-color: var(--sec-bg-color2);
+    border: none;
+    box-shadow: none;
+}
+
+::placeholder {
+    color: #777777 !important;
+    font-size: 14px;
+    opacity: 1;
+}
